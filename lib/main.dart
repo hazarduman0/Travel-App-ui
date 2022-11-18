@@ -7,7 +7,7 @@ void main() {
   runApp(const MyApp());
 }
 
-ThemeManager _themeManager = ThemeManager();
+ThemeManager themeManager = ThemeManager();
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -19,14 +19,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void dispose() {
-    _themeManager.removeListener(themeListener);
+    themeManager.removeListener(themeListener);
     super.dispose();
   }
 
   @override
   void initState() {
-    _themeManager.addListener(themeListener);
-    //_themeManager.toggleTheme(true);
+    themeManager.addListener(themeListener);
+    //themeManager.toggleTheme(true);
     super.initState();
   }
 
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: _themeManager.themeMode,
+      themeMode: themeManager.themeMode,
       debugShowCheckedModeBanner: false,
       home: const FlowPage(),
     );

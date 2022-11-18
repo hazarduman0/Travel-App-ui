@@ -2,14 +2,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 //LIGHT
-TextStyle BODY_LARGE_LIGHT = GoogleFonts.lora(
-    color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.w500);
+TextStyle BODY_LARGE_LIGHT = GoogleFonts.roboto(
+    color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.w400);
 
-TextStyle BODY_MEDIUM_LIGHT = GoogleFonts.lora(
-    color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w400);
+TextStyle BODY_MEDIUM_LIGHT = GoogleFonts.roboto(
+    color: Colors.black, fontSize: 15.0, fontWeight: FontWeight.w500);
 
-TextStyle BODY_SMALL_LIGHT = GoogleFonts.lora(
-    color: Colors.black, fontSize: 15.0, fontWeight: FontWeight.w400);
+TextStyle BODY_SMALL_LIGHT = GoogleFonts.roboto(
+    color: Colors.black, fontSize: 10.0, fontWeight: FontWeight.w400);
 
 TextStyle DISPLAY_LARGE_LIGHT = GoogleFonts.oxygen(
     color: Colors.black87, fontSize: 40.0, fontWeight: FontWeight.w400);
@@ -49,14 +49,14 @@ TextStyle TITLE_SMALL_LIGHT = GoogleFonts.caveat(
 
 
 //DARK
-TextStyle BODY_LARGE_DARK = GoogleFonts.workSans(
-    color: Colors.white70, fontSize: 30.0, fontWeight: FontWeight.w500);
+TextStyle BODY_LARGE_DARK = GoogleFonts.roboto(
+    color: Colors.white70, fontSize: 25.0, fontWeight: FontWeight.w400);
 
-TextStyle BODY_MEDIUM_DARK = GoogleFonts.workSans(
-    color: Colors.white70, fontSize: 20.0, fontWeight: FontWeight.w500);
-
-TextStyle BODY_SMALL_DARK = GoogleFonts.workSans(
+TextStyle BODY_MEDIUM_DARK = GoogleFonts.roboto(
     color: Colors.white70, fontSize: 15.0, fontWeight: FontWeight.w500);
+
+TextStyle BODY_SMALL_DARK = GoogleFonts.roboto(
+    color: Colors.white70, fontSize: 10.0, fontWeight: FontWeight.w400);
 
 TextStyle DISPLAY_LARGE_DARK = GoogleFonts.oxygen(
     color: Colors.white70, fontSize: 40.0, fontWeight: FontWeight.w400);

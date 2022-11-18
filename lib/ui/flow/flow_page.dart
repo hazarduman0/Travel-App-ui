@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_ui/core/helper/theme_helper.dart';
+import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_appbar.dart';
+import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_my_location.dart';
+import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_story.dart';
 
 class FlowPage extends StatelessWidget {
   const FlowPage({super.key});
@@ -7,28 +11,11 @@ class FlowPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(),
-      body: SizedBox(
-        height: size.height,
-        width: size.width,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(loremIpsum, style: Theme.of(context).textTheme.bodySmall),
-              SizedBox(
-                  height: size.height * 0.3,
-                  width: size.width * 0.9,
-                  child: Card()),
-              ElevatedButton(onPressed: () {}, child: const Text('Begin!')),
-            ],
-          ),
-        ),
-      ),
-    );
+        backgroundColor: ThemeHelper.backgroundColor,
+        body: const CustomScrollView(
+          physics:
+              BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          slivers: [CustomSliverAppBar(), SliverStory(), SliverMyLocation()],
+        ));
   }
 }
-
-const String loremIpsum =
-    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.';
