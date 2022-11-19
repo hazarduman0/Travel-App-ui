@@ -12,7 +12,7 @@ class SliverStory extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: size.height * 0.15,
+        height: size.shortestSide * 0.35,
         width: size.width,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),

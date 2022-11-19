@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app_ui/core/constants/app_colors.dart';
 import 'package:travel_app_ui/core/constants/keys.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
-import 'package:travel_app_ui/theme/theme_manager.dart';
 import 'package:travel_app_ui/ui/flow/widget/animated_media.dart';
 
 class SliverMyLocation extends StatefulWidget {
@@ -44,7 +43,10 @@ class _SliverMyLocationState extends State<SliverMyLocation> {
   Widget locationInfo(Size size) => Align(
         alignment: Alignment.center,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: size.shortestSide * 0.03),
+          padding: EdgeInsets.only(
+              right: size.shortestSide * 0.03,
+              left: size.shortestSide * 0.03,
+              bottom: size.shortestSide * 0.05),
           child: Container(
             width: size.shortestSide * 0.9,
             decoration: locationInfoDecoration(size),
@@ -79,7 +81,7 @@ class _SliverMyLocationState extends State<SliverMyLocation> {
       );
 
   Widget locationMedias(Size size) => SizedBox(
-        height: size.height * 0.7,
+        height: size.shortestSide * 1.3,
         width: size.width,
         child: ListView.builder(
             physics: const BouncingScrollPhysics(
@@ -94,6 +96,31 @@ class _SliverMyLocationState extends State<SliverMyLocation> {
               );
             }),
       );
+
+  // Widget locationMedias(Size size) => SizedBox(
+  //     height: size.shortestSide * 1.2,
+  //     width: size.width,
+  //     child: ListView(
+  //         physics: const BouncingScrollPhysics(
+  //             parent: AlwaysScrollableScrollPhysics()),
+  //         scrollDirection: Axis.horizontal,
+  //         children: lisViewWidgets(size)));
+
+  // Widget locationMedias(Size size) => SizedBox(
+  //     height: size.shortestSide * 1.2,
+  //     width: size.width,
+  //     child: SingleChildScrollView(
+  //         physics: const BouncingScrollPhysics(
+  //             parent: AlwaysScrollableScrollPhysics()),
+  //         scrollDirection: Axis.horizontal,
+  //         child: Row(children: lisViewWidgets(size))));
+
+  // List<Widget> lisViewWidgets(Size size) => List.generate(
+  //     7,
+  //     (index) => Padding(
+  //           padding: EdgeInsets.symmetric(horizontal: size.shortestSide * 0.03),
+  //           child: const AnimatedMedia(),
+  //         ));
 
   Widget bookMarkIcon(Size size) => Align(
         alignment: Alignment.topRight,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app_ui/theme/theme_constants.dart';
 import 'package:travel_app_ui/theme/theme_manager.dart';
-import 'package:travel_app_ui/ui/flow/flow_page.dart';
+import 'package:travel_app_ui/ui/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: darkTheme,
       themeMode: themeManager.themeMode,
       debugShowCheckedModeBanner: false,
-      home: const FlowPage(),
+      home: const MainPage(),
     );
   }
 }

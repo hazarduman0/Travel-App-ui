@@ -8,7 +8,8 @@ class ThemeHelper {
   static Color onPrimaryColor =
       isLight ? COLOR_ONPRIMARY_LIGHT : COLOR_ONPRIMARY_DARK;
 
-  static Color onErrorColor = isLight ? COLOR_ERROR_LIGHT : COLOR_ONERROR_DARK;
+  static Color onErrorColor =
+      isLight ? COLOR_ONERROR_LIGHT : COLOR_ONERROR_DARK;
 
   static Color blackAndWhite = isLight ? Colors.black87 : Colors.white70;
 
@@ -20,4 +21,11 @@ class ThemeHelper {
 
   static Color faintColor =
       isLight ? Colors.black45 : const Color.fromARGB(255, 173, 173, 173);
+
+  static Color onSurface =
+      isLight ? COLOR_ONSURFACE_LIGHT : COLOR_ONSURFACE_DARK;
+
+  static Color onSurfaceWithOpacity(double opacity) => isLight
+      ? COLOR_ONSURFACE_LIGHT.withOpacity(opacity)
+      : COLOR_ONSURFACE_DARK.withOpacity(opacity);
 }
