@@ -22,6 +22,9 @@ class ThemeHelper {
   static Color faintColor =
       isLight ? Colors.black45 : const Color.fromARGB(255, 173, 173, 173);
 
+  static Color surfaceColor =
+      isLight ? COLOR_SURFACE_LIGHT : COLOR_SURFACE_DARK;    
+
   static Color onSurface =
       isLight ? COLOR_ONSURFACE_LIGHT : COLOR_ONSURFACE_DARK;
 
