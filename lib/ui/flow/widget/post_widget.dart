@@ -52,7 +52,7 @@ class _PostWidgetState extends State<PostWidget> {
               right: 0.0,
               left: 0.0,
               child: Container(
-                height: size.shortestSide * 0.23,
+                height: size.shortestSide * 0.24,
                 width: size.shortestSide * 0.9,
                 decoration: bottomBoxDecoration(size),
                 child: Column(

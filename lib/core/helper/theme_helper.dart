@@ -31,4 +31,6 @@ class ThemeHelper {
   static Color onSurfaceWithOpacity(double opacity) => isLight
       ? COLOR_ONSURFACE_LIGHT.withOpacity(opacity)
       : COLOR_ONSURFACE_DARK.withOpacity(opacity);
+
+  static Color transparentColor = isLight ? Colors.black12 : Colors.white12;    
 }

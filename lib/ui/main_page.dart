@@ -1,14 +1,9 @@
-import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
-import 'package:travel_app_ui/ui/chat/chat_page.dart';
-import 'package:travel_app_ui/ui/flow/flow_page.dart';
-import 'package:travel_app_ui/ui/map/map_page.dart';
-import 'package:travel_app_ui/ui/notification/notification_page.dart';
-import 'package:travel_app_ui/ui/user/user_profile_page.dart';
+import 'package:travel_app_ui/ui/drawer_widget.dart';
+import 'package:travel_app_ui/ui/home_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -18,14 +13,33 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  late PageController pageController;
-  int currentIndex = 0;
+  late double xOffset;
+  late double yOffset;
+  late double scaleFactor;
+  late bool isDrawerOpen;
+  bool isDragging = false;
 
   @override
   void initState() {
     super.initState();
-    pageController = PageController(initialPage: 0);
+    closeDrawer();
   }
+
+  void openDrawer() => setState(() {
+        xOffset =
+            window.physicalSize.shortestSide / window.devicePixelRatio * 0.6;
+        yOffset =
+            window.physicalSize.shortestSide / window.devicePixelRatio * 0.4;
+        scaleFactor = 0.6;
+        isDrawerOpen = true;
+      });
+
+  void closeDrawer() => setState(() {
+        xOffset = 0;
+        yOffset = 0;
+        scaleFactor = 1;
+        isDrawerOpen = false;
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -33,140 +47,57 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: ThemeHelper.backgroundColor,
       body: Stack(
-        children: [
-          PageView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: pageController,
-              children: const [
-                FlowPage(),
-                NotificationPage(),
-                ChatPage(),
-                MapPage(),
-                UserProfilePage()
-              ]),
-          Positioned(bottom: 0.0, child: bottomNavigationBar(size))
-        ],
+        children: [buildDrawer(), buildPage(size)],
       ),
     );
   }
 
-  Widget bottomNavigationBar(Size size) => Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: size.shortestSide * 0.025,
-            vertical: size.shortestSide * 0.02),
-        child: Container(
-          height: size.shortestSide * 0.13,
-          width: size.shortestSide * 0.95,
-          decoration: bottomNavigationBarDecoration(size),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(size.shortestSide * 0.04),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
-              child: Align(
-                alignment: Alignment.center,
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      bottomNavigationBarIcon(
-                          size,
-                          indexZero,
-                          currentIndex == 0
-                              ? FontAwesomeIcons.solidCompass
-                              : FontAwesomeIcons.compass),
-                      bottomNavigationBarIcon(
-                          size,
-                          indexOne,
-                          currentIndex == 1
-                              ? FontAwesomeIcons.solidBell
-                              : FontAwesomeIcons.bell),
-                      bottomNavigationBarIcon(
-                          size,
-                          indexTwo,
-                          currentIndex == 2
-                              ? FontAwesomeIcons.solidComments
-                              : FontAwesomeIcons.comments),
-                      bottomNavigationBarIcon(
-                          size,
-                          indexThree,
-                          currentIndex == 3
-                              ? FontAwesomeIcons.solidMap
-                              : FontAwesomeIcons.map),
-                      bottomNavigationBarIcon(
-                          size,
-                          indexFour,
-                          currentIndex == 4
-                              ? FontAwesomeIcons.solidUser
-                              : FontAwesomeIcons.user)
-                    ]),
-              ),
-            ),
-          ),
-        ),
-      );
+  Widget buildDrawer() =>  SafeArea(child: SizedBox(
+    width: xOffset,
+    child: const DrawerWidget()));
 
-  Widget bottomNavigationBarIcon(
-          Size size, Function()? onPressed, IconData? icon) =>
-      IconButton(
-          onPressed: onPressed,
-          icon: Icon(icon,
-              color: ThemeHelper.faintColor, size: size.shortestSide * 0.05));
+  Widget buildPage(Size size) {
+    return WillPopScope(
+      onWillPop: () async {
+        if (isDrawerOpen) {
+          closeDrawer();
+          return false;
+        } else {
+          return true;
+        }
+      },
+      child: GestureDetector(
+        onTap: closeDrawer,
+        onHorizontalDragStart: (details) => isDragging = true,
+        onHorizontalDragUpdate: (details) {
+          if (!isDragging) return;
+          const delta = 1;
+          if (details.delta.dx > delta) {
+            openDrawer();
+          } else if (details.delta.dx < -delta) {
+            closeDrawer();
+          }
 
-  BoxDecoration bottomNavigationBarDecoration(Size size) => BoxDecoration(
-      color: ThemeHelper.onSurfaceWithOpacity(0.9),
-      borderRadius: BorderRadius.circular(size.shortestSide * 0.04));
-
-  Function? indexZero() {
-    if (currentIndex != 0) {
-      // pageController.animateToPage(0,
-      //     duration: const Duration(milliseconds: 250), curve: Curves.linear);
-      pageController.jumpToPage(0);    
-    }
-    setState(() {
-      currentIndex = 0;
-    });
-  }
-
-  Function? indexOne() {
-    if (currentIndex != 1) {
-      // pageController.animateToPage(1,
-      //     duration: const Duration(milliseconds: 250), curve: Curves.linear);
-      pageController.jumpToPage(1);
-    }
-    setState(() {
-      currentIndex = 1;
-    });
-  }
-
-  Function? indexTwo() {
-    if (currentIndex != 2) {
-      // pageController.animateToPage(2,
-      //     duration: const Duration(milliseconds: 250), curve: Curves.linear);
-      pageController.jumpToPage(2);
-    }
-    setState(() {
-      currentIndex = 2;
-    });
-  }
-
-  Function? indexThree() {
-    if (currentIndex != 3) {
-      // pageController.animateToPage(3,
-      //     duration: const Duration(milliseconds: 250), curve: Curves.linear);
-      pageController.jumpToPage(3);
-    }
-    setState(() {
-      currentIndex = 3;
-    });
-  }
-
-  Function? indexFour() {
-    if (currentIndex != 4) {
-      // pageController.animateToPage(4,
-      //     duration: const Duration(milliseconds: 250), curve: Curves.linear);
-      pageController.jumpToPage(4);
-    }
-    setState(() {
-      currentIndex = 4;
-    });
+          isDragging = false;
+        },
+        child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            transform: Matrix4.translationValues(xOffset, yOffset, 0)
+              ..scale(scaleFactor),
+            child: AbsorbPointer(
+                absorbing: isDrawerOpen,
+                child: ClipRRect(
+                  borderRadius: isDrawerOpen
+                      ? BorderRadius.circular(size.shortestSide * 0.07)
+                      : BorderRadius.circular(0.0),
+                  child: Container(
+                    color: isDrawerOpen
+                        ? ThemeHelper.transparentColor
+                        : ThemeHelper.backgroundColor,
+                    child: HomePage(openDrawer: () => openDrawer()),
+                  ),
+                ))),
+      ),
+    );
   }
 }

@@ -5,7 +5,9 @@ import 'package:travel_app_ui/core/helper/theme_helper.dart';
 import 'package:travel_app_ui/ui/flow/widget/circle_avatar.dart';
 
 class CustomSliverAppBar extends StatelessWidget {
-  const CustomSliverAppBar({super.key});
+  const CustomSliverAppBar({super.key, required this.onClick});
+
+  final VoidCallback onClick;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,8 @@ class CustomSliverAppBar extends StatelessWidget {
     return SliverAppBar(
       pinned: true,
       leading: IconButton(
-          onPressed: () {},
-          icon: Icon(FontAwesomeIcons.barsStaggered,
+          onPressed: onClick,
+          icon: Icon(FontAwesomeIcons.alignLeft,
               color: ThemeHelper.blackAndWhite)),
       title: Text(title, style: Theme.of(context).textTheme.titleMedium),
       actions: [

@@ -8,7 +8,9 @@ import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_sized_box.dart';
 import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_story.dart';
 
 class FlowPage extends StatelessWidget {
-  const FlowPage({super.key});
+  FlowPage({super.key, required this.onClick});
+
+  final VoidCallback onClick;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class FlowPage extends StatelessWidget {
       physics:
           const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
       slivers: [
-        const CustomSliverAppBar(),
+        CustomSliverAppBar(onClick: onClick),
         const SliverStory(),
         const SliverMyLocation(),
         const SliverBestPlace(),
