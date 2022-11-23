@@ -75,11 +75,13 @@ class _PostWidgetState extends State<PostWidget> {
                         padding: EdgeInsets.symmetric(
                             horizontal: size.shortestSide * 0.02,
                             vertical: size.shortestSide * 0.02),
-                        child: AutoSizeText('Lorem ipsum dolor sit amet',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodySmall!
-                                .copyWith(fontSize: 17.0)),
+                        child: HeroWidget(
+                            tag: 'postInfo',
+                            widget: AutoSizeText('Lorem ipsum dolor sit amet',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .copyWith(fontSize: 17.0))),
                       ),
                       Row(
                         children: [
@@ -101,23 +103,33 @@ class _PostWidgetState extends State<PostWidget> {
 
   Row likeCount(Size size, BuildContext context) => Row(
         children: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(FontAwesomeIcons.solidHeart,
-                  color: ThemeHelper.onErrorColor)),
+          HeroWidget(
+              tag: 'like',
+              widget: IconButton(
+                  onPressed: () {},
+                  icon: Icon(FontAwesomeIcons.solidHeart,
+                      color: ThemeHelper.onErrorColor))),
           SizedBox(width: size.width * 0.01),
-          AutoSizeText('24', style: Theme.of(context).textTheme.bodyMedium)
+          HeroWidget(
+              tag: 'likeCount',
+              widget: AutoSizeText('24',
+                  style: Theme.of(context).textTheme.bodyMedium))
         ],
       );
 
   Row commentCount(Size size, BuildContext context) => Row(
         children: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(FontAwesomeIcons.comment,
-                  color: ThemeHelper.faintColor)),
+          HeroWidget(
+              tag: 'comment',
+              widget: IconButton(
+                  onPressed: () {},
+                  icon: Icon(FontAwesomeIcons.comment,
+                      color: ThemeHelper.faintColor))),
           SizedBox(width: size.width * 0.01),
-          AutoSizeText('8', style: Theme.of(context).textTheme.bodyMedium)
+          HeroWidget(
+              tag: 'commentCount',
+              widget: AutoSizeText('8',
+                  style: Theme.of(context).textTheme.bodyMedium))
         ],
       );
 
@@ -130,7 +142,3 @@ class _PostWidgetState extends State<PostWidget> {
             bottomRight: Radius.circular(size.shortestSide * 0.03)),
       );
 }
-
-
-
-

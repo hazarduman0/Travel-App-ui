@@ -28,10 +28,16 @@ class PostSliverAppBar extends StatelessWidget {
         )
       ],
       backgroundColor: Colors.transparent,
+      stretch: true,
       expandedHeight: size.shortestSide * 0.7,
       flexibleSpace: FlexibleSpaceBar(
+        stretchModes: const [
+          StretchMode.zoomBackground,
+          StretchMode.fadeTitle,
+          StretchMode.blurBackground
+        ],
         titlePadding:
-            EdgeInsets.symmetric(horizontal: size.shortestSide * 0.04),
+            EdgeInsets.symmetric(horizontal: size.shortestSide * 0.15),
         title: HeroWidget(
             tag: 'title',
             widget: AutoSizeText('Mount Fuji',

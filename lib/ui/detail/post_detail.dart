@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
 import 'package:travel_app_ui/ui/detail/widget/sliver/sliver_appbar.dart';
+import 'package:travel_app_ui/ui/detail/widget/sliver/sliver_post_info.dart';
 
 class PostDetailPage extends StatefulWidget {
   const PostDetailPage({super.key});
@@ -16,7 +17,8 @@ class _PostDetailPageState extends State<PostDetailPage> {
     return Scaffold(
       backgroundColor: ThemeHelper.backgroundColor,
       body: const CustomScrollView(
-        slivers: [PostSliverAppBar()],
+        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+        slivers: [PostSliverAppBar(), SliverPostInfo()],
       ),
     );
   }
