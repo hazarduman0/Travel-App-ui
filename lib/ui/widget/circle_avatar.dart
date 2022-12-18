@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app_ui/core/constants/app_colors.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
-import 'package:travel_app_ui/main.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
   CustomCircleAvatar({super.key, required this.minRadius});

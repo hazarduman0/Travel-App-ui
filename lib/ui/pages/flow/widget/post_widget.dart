@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
 import 'package:travel_app_ui/core/transition/fade_transition.dart';
-import 'package:travel_app_ui/ui/detail/post_detail.dart';
-import 'package:travel_app_ui/ui/flow/widget/circle_avatar.dart';
-import 'package:travel_app_ui/ui/hero_widget.dart';
+import 'package:travel_app_ui/ui/pages/detail/post_detail.dart';
+import 'package:travel_app_ui/ui/widget/circle_avatar.dart';
+import 'package:travel_app_ui/ui/widget/hero_widget.dart';
 
 class PostWidget extends StatefulWidget {
   const PostWidget({super.key});

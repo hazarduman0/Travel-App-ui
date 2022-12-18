@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_appbar.dart';
-import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_best_place.dart';
-import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_divider.dart';
-import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_my_location.dart';
-import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_post_zone.dart';
-import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_sized_box.dart';
-import 'package:travel_app_ui/ui/flow/widget/sliver/sliver_story.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/sliver/sliver_appbar.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/sliver/sliver_best_place.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/sliver/sliver_divider.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/sliver/sliver_my_location.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/sliver/sliver_post_zone.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/sliver/sliver_sized_box.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/sliver/sliver_story.dart';
 
 class FlowPage extends StatelessWidget {
   FlowPage({super.key, required this.onClick});

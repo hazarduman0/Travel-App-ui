@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app_ui/core/constants/app_colors.dart';
 import 'package:travel_app_ui/core/constants/keys.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
-import 'package:travel_app_ui/ui/flow/widget/animated_media.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/animated_media.dart';
 
 class SliverMyLocation extends StatefulWidget {
   const SliverMyLocation({super.key});

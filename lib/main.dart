@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app_ui/theme/theme_constants.dart';
 import 'package:travel_app_ui/theme/theme_manager.dart';
-import 'package:travel_app_ui/ui/main_page.dart';
+import 'package:travel_app_ui/ui/widget/main_page.dart';
 
 void main() {
   runApp(const MyApp());

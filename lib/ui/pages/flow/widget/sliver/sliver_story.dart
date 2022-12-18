@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:travel_app_ui/ui/flow/widget/story_box.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/story_box.dart';
 
 class SliverStory extends StatelessWidget {
   const SliverStory({super.key});

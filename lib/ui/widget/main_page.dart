@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
-import 'package:travel_app_ui/ui/drawer_widget.dart';
-import 'package:travel_app_ui/ui/home_page.dart';
+import 'package:travel_app_ui/ui/widget/drawer_widget.dart';
+import 'package:travel_app_ui/ui/widget/home_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});

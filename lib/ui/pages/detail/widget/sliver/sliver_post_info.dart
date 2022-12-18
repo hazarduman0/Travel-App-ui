@@ -1,12 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:travel_app_ui/controller/state_controller.dart';
 import 'package:travel_app_ui/core/constants/keys.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
-import 'package:travel_app_ui/ui/hero_widget.dart';
+import 'package:travel_app_ui/ui/widget/hero_widget.dart';
 
 class SliverPostInfo extends StatelessWidget {
-  const SliverPostInfo({super.key});
+  SliverPostInfo({super.key});
+  final _stateController = StateController();
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,9 @@ class SliverPostInfo extends StatelessWidget {
           HeroWidget(
               tag: 'comment',
               widget: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //_stateController.changeCommentStatus();
+                  },
                   icon: Icon(FontAwesomeIcons.comment,
                       color: ThemeHelper.faintColor))),
           SizedBox(width: size.width * 0.01),

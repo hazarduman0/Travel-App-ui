@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app_ui/ui/flow/widget/divider_widget.dart';
-import 'package:travel_app_ui/ui/flow/widget/post_widget.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/divider_widget.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/post_widget.dart';
 
 class SliverPostZone extends StatelessWidget {
   const SliverPostZone({super.key});

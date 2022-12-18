@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app_ui/core/constants/keys.dart';
-import 'package:travel_app_ui/ui/flow/widget/best_place_media.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/best_place_media.dart';
 
 class SliverBestPlace extends StatefulWidget {
   const SliverBestPlace({super.key});

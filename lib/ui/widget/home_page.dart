@@ -2,11 +2,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
-import 'package:travel_app_ui/ui/chat/chat_page.dart';
-import 'package:travel_app_ui/ui/flow/flow_page.dart';
-import 'package:travel_app_ui/ui/map/map_page.dart';
-import 'package:travel_app_ui/ui/notification/notification_page.dart';
-import 'package:travel_app_ui/ui/user/user_profile_page.dart';
+import 'package:travel_app_ui/ui/pages/chat/chat_page.dart';
+import 'package:travel_app_ui/ui/pages/flow/flow_page.dart';
+import 'package:travel_app_ui/ui/pages/map/map_page.dart';
+import 'package:travel_app_ui/ui/pages/notification/notification_page.dart';
+import 'package:travel_app_ui/ui/pages/user/user_profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.openDrawer});

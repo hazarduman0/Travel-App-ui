@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app_ui/ui/flow/widget/divider_widget.dart';
+import 'package:travel_app_ui/ui/pages/flow/widget/divider_widget.dart';
 
 class SliverDivider extends StatelessWidget {
   const SliverDivider({super.key});

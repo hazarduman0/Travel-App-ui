@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app_ui/core/helper/theme_helper.dart';
-import 'package:travel_app_ui/ui/flow/widget/circle_avatar.dart';
-import 'package:travel_app_ui/ui/hero_widget.dart';
+import 'package:travel_app_ui/ui/widget/circle_avatar.dart';
+import 'package:travel_app_ui/ui/widget/hero_widget.dart';
 
 class PostSliverAppBar extends StatelessWidget {
   const PostSliverAppBar({super.key});
