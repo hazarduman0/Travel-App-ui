@@ -1,16 +1,13 @@
-# travel_app_ui
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Travel App UI
+## Screenshots from application
+<p float="left">
+<img src="https://github.com/hazarduman0/Travel-App-ui/blob/main/screenshots/Screenshot_1682619682.png?raw=true" width="216" height="468">
+<img src="https://github.com/hazarduman0/Travel-App-ui/blob/main/screenshots/Screenshot_1682619692.png?raw=true" width="216" height="468">
+<img src="https://github.com/hazarduman0/Travel-App-ui/blob/main/screenshots/Screenshot_1682619701.png?raw=true" width="216" height="468">
+<img src="https://github.com/hazarduman0/Travel-App-ui/blob/main/screenshots/Screenshot_1682619711.png?raw=true" width="216" height="468">
+<img src="https://github.com/hazarduman0/Travel-App-ui/blob/main/screenshots/Screenshot_1682619719.png?raw=true" width="216" height="468">
+<img src="https://github.com/hazarduman0/Travel-App-ui/blob/main/screenshots/Screenshot_1682619741.png?raw=true" width="216" height="468">
+<img src="https://github.com/hazarduman0/Travel-App-ui/blob/main/screenshots/Screenshot_1682619746.png?raw=true" width="216" height="468">
+<img src="https://github.com/hazarduman0/Travel-App-ui/blob/main/screenshots/Screenshot_1682619751.png?raw=true" width="216" height="468">
+<img src="https://github.com/hazarduman0/Travel-App-ui/blob/main/screenshots/Screenshot_1682619763.png?raw=true" width="216" height="468">
+</p>
